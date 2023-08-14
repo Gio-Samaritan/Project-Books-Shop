@@ -1,25 +1,18 @@
 
-// Подключение картинки
-import Icon from './icon.png';
-
-// подключение стилей
-import './style.sass';
-
-function component() {
-    const element = document.createElement('div');
-
-    element.innerHTML = 'Hello Webpack 5';
-    element.classList.add('hello');
-
-    // Пример использования картинки
-    const myIcon = new Image();
-    myIcon.src = Icon;
-
-    element.appendChild(myIcon);
-
-    return element;
+ import example from './images/example.png'
+class Game {
+    name = 'Violin Charades'
 }
+const myGame = new Game()
 
-document.body.appendChild(component());
+// создаем параграф
+const p = document.createElement('p')
+p.textContent = `I like ${myGame.game}.`
 
-console.log('123')
+// создаем элемент заголовка
+const heading = document.createElement('h1')
+heading.textContent = 'Как интересно!'
+
+// добавляем параграф и заголовок в DOM
+const root = document.querySelector('#root')
+root.append(heading, p);
